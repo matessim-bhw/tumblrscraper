@@ -21,10 +21,10 @@ public class SaveHelper {
 	public File getFile(String address,String dir){
 		System.out.println("BUT UHM");
 		try{
-		FileUtils.forceMkdir(new File(WORKING_DIR + '\\' + "downloads" + '\\' + dir));
+		FileUtils.forceMkdir(new File(WORKING_DIR + File.separator + dir));
 		int dot = address.lastIndexOf(".");
 		String extension = address.substring(dot+1);
-		return new File(WORKING_DIR + '\\' + "downloads" + '\\' + dir + '\\'+ getFileNumber(dir) + '.' + extension);
+		return new File(WORKING_DIR + File.separator + dir + File.separator+ getFileNumber(dir) + '.' + extension);
 		}catch(Exception e){
 			e.printStackTrace();
 			System.err.println("Error Getting File Location");
